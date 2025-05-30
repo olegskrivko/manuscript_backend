@@ -16,12 +16,12 @@ from datetime import timedelta
 from dotenv import load_dotenv
 
 # Try loading from Render secret path, else fallback to local .env
-# if os.path.exists("/etc/secrets/.env"):
-#     load_dotenv("/etc/secrets/.env")
-# else:
-#     load_dotenv()  # local .env
-# load_dotenv("/etc/secrets/.env") 
-load_dotenv()  # Load environment variables from .env
+if os.path.exists("/etc/secrets/.env"):
+    load_dotenv("/etc/secrets/.env")
+else:
+    load_dotenv()  # local .env
+load_dotenv("/etc/secrets/.env") 
+#load_dotenv()  # Load environment variables from .env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
